@@ -4,12 +4,14 @@ Entangle is an innovative web platform designed to intelligently connect startup
 The system simplifies the fundraising and investment discovery process by analyzing startup profiles, investor preferences, and market data to generate the most suitable matches.
 
 🌟 Key Features
+
     🔐 Authentication & Profiles
     Startup Registration & Login
     Investor Registration & Login
     Entrepreneur Registration & Login
     Dynamic profile creation with real-time validation
 🤖 AI Features
+
     AI-Based Startup Ranking
     AI-Powered Matchmaking Engine
     Smart Search & Filtering
