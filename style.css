@@ -1,3 +1,4 @@
+/* Nav bar*/
 .navbar{
     position: fixed;
     top: 0;
@@ -15,6 +16,16 @@
     padding: 10px 0;
     box-shadow: var(--shadow-card);
 }
-{
-    
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
