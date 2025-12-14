@@ -17,6 +17,9 @@
 }
 
 
+/* How It Works Section */
+
+
 .timeline{
     position: relative;
     max-width: 800px;
@@ -119,6 +122,71 @@
     font-size: 0.95rem;
 }
 
+
+
+/* Architecture Section */
+
+
+.architecture {
+    background: var(--bg-secondary);
+}
+
+.architecture-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.arch-tier {
+    background: var(--bg-card);
+    border: 1px solid var (--border-color);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    min-width: 200px;
+    flex: 1;
+    max-width: 280px;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.arch-tier:hover {
+    transform: translateY(-10px);
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-glow);
+}
+
+.arch-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: var(--gradient-primary);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.arch-tire h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.arch-tire p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.arch-connector {
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    animation: pulse 2s ease-in-out infinite;
+}
     
 
 
