@@ -204,3 +204,15 @@ body.light-mode .hero-video {
     padding: 16px 32px;
     font-size: 1.1rem;
 }
+
+@media (max-width: 768px) {
+    .hero-stats {
+        gap: 30px;
+    }
+}
+    
+@media (max-width: 480px) {
+    .hero-buttons {
+        flex-direction: column;
+    }
+}    
