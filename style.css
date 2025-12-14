@@ -15,6 +15,111 @@
     padding: 10px 0;
     box-shadow: var(--shadow-card);
 }
-{
-    
+
+
+.timeline{
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
 }
+
+.timeline::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-number {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk' , sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    z-index: 1;
+}
+
+.timeline-content {
+    width: cal(50% - 60px);
+    background: var(--bg-card);
+    border: 1px solid var (--border-color);
+    border-radius: 16px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: auto;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    marigin-left: auto;
+    text-align: left;
+}
+
+.timeline-content:hover {
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-glow);
+}
+
+.timeline-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-glow);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: var(--accent-blue);
+    margin-bottom: 16px;
+}
+
+.timeline-item:nth-child(odd) .timeline-icon{
+    marigin-left: auto;
+}
+
+.timeline-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+    
+
+
+
