@@ -26,3 +26,14 @@ function initActiveNavHighlight() {
 }
 
 initActiveNavHighlight();
+
+//Form Validation (for future login forms) - Vishwa Amarajith//
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function validatePassword(password) {
+    return password.length >= 8;
+    
+}
