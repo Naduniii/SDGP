@@ -35,5 +35,10 @@ function validateEmail(email) {
 
 function validatePassword(password) {
     return password.length >= 8;
-    
+
 }
+
+// Console Welcome Message - Vishwa Amarajith//
+console.log('%c⚡ Entangle', 'font-size: 24px; font-weight: bold; color: #3b82f6;');
+console.log('%cAI-Powered Startup & Investor Connection Platform', 'font-size: 14px; color: #8b5cf6;');
+console.log('%cBuilt with ❤️ for entrepreneurs and investors', 'font-size: 12px; color: #6b7280;');
