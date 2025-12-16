@@ -40,3 +40,16 @@ function initCounterAnimation() {
     // Initial check
     animateCounters();
 }
+
+// Parallax Effect for Hero Section
+function initParallax() {
+    const heroContent = document.querySelector('.hero-content');
+    
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        if (heroContent && scrolled < window.innerHeight) {
+            heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+            heroContent.style.opacity = 1 - (scrolled / window.innerHeight);
+        }
+    });
+}
