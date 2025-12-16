@@ -216,3 +216,178 @@ body.light-mode .hero-video {
         flex-direction: column;
     }
 }    
+
+/* How It Works Section */
+
+
+.timeline{
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-number {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Grotesk' , sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    z-index: 1;
+}
+
+.timeline-content {
+    width: cal(50% - 60px);
+    background: var(--bg-card);
+    border: 1px solid var (--border-color);
+    border-radius: 16px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: auto;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    marigin-left: auto;
+    text-align: left;
+}
+
+.timeline-content:hover {
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-glow);
+}
+
+.timeline-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-glow);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: var(--accent-blue);
+    margin-bottom: 16px;
+}
+
+.timeline-item:nth-child(odd) .timeline-icon{
+    marigin-left: auto;
+}
+
+.timeline-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+
+
+/* Architecture Section */
+
+
+.architecture {
+    background: var(--bg-secondary);
+}
+
+.architecture-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.arch-tier {
+    background: var(--bg-card);
+    border: 1px solid var (--border-color);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    min-width: 200px;
+    flex: 1;
+    max-width: 280px;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.arch-tier:hover {
+    transform: translateY(-10px);
+    border-color: var(--border-glow);
+    box-shadow: var(--shadow-glow);
+}
+
+.arch-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: var(--gradient-primary);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.arch-tire h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.arch-tire p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
+
+.arch-connector {
+    color: var(--accent-blue);
+    font-size: 1.5rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+    
+
+
+
