@@ -1,4 +1,4 @@
-// Counter Animation
+// Counter Animation - Binuri Piyathma
 function initCounterAnimation() {
     const counters = document.querySelectorAll('.stat-number');
     let hasAnimated = false;
@@ -34,14 +34,14 @@ function initCounterAnimation() {
         }
     }
     
-    // Check on scroll
+    // Check on scroll - Binuri Piyathma
     window.addEventListener('scroll', animateCounters);
     
-    // Initial check
+    // Initial check - Binuri Piyathma
     animateCounters();
 }
 
-// Parallax Effect for Hero Section
+// Parallax Effect for Hero Section - Binuri Piyathma
 function initParallax() {
     const heroContent = document.querySelector('.hero-content');
     

@@ -16,7 +16,7 @@
     box-shadow: var(--shadow-card);
 }
 
-/* Hero Section */
+/* Hero Section - Binuri Piyathma */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -156,7 +156,7 @@ body.light-mode .hero-video {
     animation: scroll 2s ease-in-out infinite;
 }
 
-/* Buttons */
+/* Buttons - Binuri Piyathma */
 .btn {
     display: inline-flex;
     align-items: center;
