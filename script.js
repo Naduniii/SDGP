@@ -47,18 +47,20 @@ function initButtonSound() {
     button.forEach(button => {
         button.addEventListener('mouseenter', playHoverSound);
     });
+}
 // ENTANGLE - AI Startup-Investor Platform
 // JavaScript Functionality
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all components
     initThemeToggle();
     initNavbar();
     initMobileMenu();
     initScrollReveal();
     initCounterAnimation();
-    initSmoothScroll();
+    smoothScrollTo();
+    initButtonSound();
 });
+
 
 
 // Theme Toggle (Dark/Light Mode)
@@ -221,7 +223,7 @@ function initScrollReveal() {
             }
         });
     }
-    
+}
     // Initial check
     revealOnScroll();
     
@@ -281,6 +283,7 @@ function initParallax() {
             heroContent.style.opacity = 1 - (scrolled / window.innerHeight);
         }
     });
+}
 // Intersection Observer for Better Performance
 
 if ('IntersectionObserver' in window) {
@@ -296,12 +299,16 @@ if ('IntersectionObserver' in window) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observerOption.unobserve(entry.target);
+                Observer.unobserve(entry.target);
+
             }
         });
-    }, observerOptions) ;
+    }, observerOption);
+
 
     lazyElements.forEach(element => {
         Observer.observe(element);
     }) ;
 }
+
+

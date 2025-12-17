@@ -141,7 +141,7 @@ body.light-mode .theme-toggle .moon-icon {
     z-index: 100;
     padding: 15px 0;
     background: var(--navbar-bg);
-    backdrop-filter: blur (20px);
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border-color);
     transition: var(--transition);
 }
@@ -178,6 +178,11 @@ body.light-mode .theme-toggle .moon-icon {
 }
 
 .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -330,6 +335,11 @@ h1, h2, h3, h4, h5, h6 {
 .feature-card:hover {
     transform: translateY(-5px);
 /* Hero Section - Binuri Piyathma */
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
 .hero {
     min-height: 100vh;
     display: flex;
@@ -603,7 +613,7 @@ body.light-mode .hero-video {
 .btn-outline {
     background: transparent;
     color: var(--text-primary);
-    border: 2px solid var(--border-color);
+    border: 2px solid var (--border-color);
 }
 
 .btn-outline:hover {
@@ -627,7 +637,7 @@ body.light-mode .hero-video {
     }
 }
     
-}
+
 
 
 
@@ -650,13 +660,12 @@ body.light-mode .hero-video {
     backdrop-filter: blur(10px);
 }
 
-.testimonial-card:hover{
-    transform: translateY(-5px);
 @media (max-width: 480px) {
-    .hero-buttons {
-        flex-direction: column;
+    .testimonial-card:hover {
+        transform: none;
     }
-}    
+}
+
 
 /* How It Works Section */
 
@@ -712,9 +721,9 @@ body.light-mode .hero-video {
 }
 
 .timeline-content {
-    width: cal(50% - 60px);
+    width: calc(50% - 60px);
     background: var(--bg-card);
-    border: 1px solid var (--border-color);
+    border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 30px;
     backdrop-filter: blur(10px);
@@ -727,7 +736,7 @@ body.light-mode .hero-video {
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-    marigin-left: auto;
+    margin-left: auto;
     text-align: left;
 }
 
@@ -801,11 +810,12 @@ body.light-mode .hero-video {
     position: relative;
 }
 
-.login-card:hover{
+
 .feature-icon {
     width: 50px;
     height: 50px;
     background: var(--gradient-primary);
+}
 .timeline-icon {
     width: 50px;
     height: 50px;
@@ -825,7 +835,7 @@ body.light-mode .hero-video {
 }
 
 .timeline-item:nth-child(odd) .timeline-icon{
-    marigin-left: auto;
+    margin-left: auto;
 }
 
 .timeline-content h3 {
@@ -833,7 +843,7 @@ body.light-mode .hero-video {
     margin-bottom: 10px;
 }
 
-.feature-card p {
+
 .timeline-content p {
     color: var(--text-secondary);
     font-size: 0.95rem;
@@ -891,7 +901,7 @@ section {
 
 .arch-tier {
     background: var(--bg-card);
-    border: 1px solid var (--border-color);
+    border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: 40px 30px;
     text-align: center;
