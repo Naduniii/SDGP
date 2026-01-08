@@ -2,19 +2,16 @@
 // JavaScript Functionality  - (Naduni Ameesha)
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all components
     initThemeToggle();
     initNavbar();
     initMobileMenu();
     initScrollReveal();
     initCounterAnimation();
-    smoothScrollTo();
-    initButtonSound();
+    initSmoothScroll();
 });
 
-
-
-// Theme Toggle (Dark/Light Mode)
-
+// Theme Toggle (Dark/Light Mode) - Naduni Ameesha
 function initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
@@ -46,8 +43,7 @@ function initThemeToggle() {
     });
 }
 
-// Navbar Scroll Effect
-
+// Navbar Scroll Effect - Naduni Ameesha
 function initNavbar() {
     const navbar = document.getElementById('navbar');
     let lastScroll = 0;
@@ -74,8 +70,7 @@ function initNavbar() {
 }
 
 
-// Mobile Menu Toggle
-
+// Mobile Menu Toggle - Naduni Ameesha
 function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
@@ -111,108 +106,7 @@ function initMobileMenu() {
 }
 
 
-// Active Navigation Link Highlight
-
-function initActiveNavHighlight() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    
-    window.addEventListener('scroll', function() {
-        let current = '';
-        const navbarHeight = document.getElementById('navbar').offsetHeight;
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - navbarHeight - 100;
-            const sectionHeight = section.offsetHeight;
-            
-            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-}
-
-
-
-
-
-
-//Active Navigation Link Highlight - Vishwa Amarajith//
-// Smooth Scroll for Anchor Links (Sakuna Upamada )
-function smoothScrollTo() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                const navbarHeight = document.getElementById('navbar').offsetHeight;
-                const targetposition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-                
-                window.scrollTo({
-                    top: targetposition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
-
-// Button Hover Sound Effect (Sakuna Upamada )
-function initButtonSound() {
-    const button = document.querySelectorAll('.btn');
-
-    // Create audio context for hover sounds
-    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
-    function playHoverSound() {
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
-
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-
-        oscillator.frequency.value = 800;
-        oscillator.type = 'sine';
-        gainNode.gain.value = 0.1;
-
-        oscillator.start();
-        gainNode.gain.exponentialRampToValueAtTime (0.01, audioContext.currentTime + 0.1);
-        oscillator.stop(audioContext.currentTime + 0.1);
-
-    }
-
-    button.forEach(button => {
-        button.addEventListener('mouseenter', playHoverSound);
-    });
-}
-
-initActiveNavHighlight();
-
-//Form Validation (for future login forms) - Vishwa Amarajith//
-function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
-
-function validatePassword(password) {
-    return password.length >= 8;
-
-}
-
-// Console Welcome Message - Vishwa Amarajith//
-console.log('%c⚡ Entangle', 'font-size: 24px; font-weight: bold; color: #3b82f6;');
-console.log('%cAI-Powered Startup & Investor Connection Platform', 'font-size: 14px; color: #8b5cf6;');
-console.log('%cBuilt with ❤️ for entrepreneurs and investors', 'font-size: 12px; color: #6b7280;');
-//scroll reveal animation
+// Scroll Reveal Animation - Yehansa Sandakini
 function initScrollReveal() {
     const reveals = document.querySelectorAll('.reveal');
     
@@ -229,13 +123,17 @@ function initScrollReveal() {
             }
         });
     }
-}
+    
     // Initial check
     revealOnScroll();
     
     // Check on scroll
     window.addEventListener('scroll', revealOnScroll);
-// Counter Animation - Binuri Piyathma
+}
+
+
+// Counter Animation - Binuri Piyathma//
+
 function initCounterAnimation() {
     const counters = document.querySelectorAll('.stat-number');
     let hasAnimated = false;
@@ -271,14 +169,71 @@ function initCounterAnimation() {
         }
     }
     
-    // Check on scroll - Binuri Piyathma
+    // Check on scroll
     window.addEventListener('scroll', animateCounters);
     
-    // Initial check - Binuri Piyathma
+    // Initial check
     animateCounters();
 }
 
-// Parallax Effect for Hero Section - Binuri Piyathma
+
+// Smooth Scroll for Anchor Links (Sakuna Upamada )
+
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const navbarHeight = document.getElementById('navbar').offsetHeight;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+}
+
+
+// Button Hover Sound Effect (Optional) - Sakuna Upamada
+
+function initButtonSounds() {
+    const buttons = document.querySelectorAll('.btn');
+    
+    // Create audio context for hover sounds
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    
+    function playHoverSound() {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        
+        oscillator.frequency.value = 800;
+        oscillator.type = 'sine';
+        gainNode.gain.value = 0.1;
+        
+        oscillator.start();
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+        oscillator.stop(audioContext.currentTime + 0.1);
+    }
+    
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', playHoverSound);
+    });
+}
+
+// Uncomment to enable button sounds
+// initButtonSounds();
+
+
+// Parallax Effect for Hero Section - Binuri Piathma
 function initParallax() {
     const heroContent = document.querySelector('.hero-content');
     
@@ -290,31 +245,78 @@ function initParallax() {
         }
     });
 }
-// Intersection Observer for Better Performance
 
+// Initialize parallax
+initParallax();
+
+
+// Intersection Observer for Better Performance - Banuka Silva
 if ('IntersectionObserver' in window) {
     const lazyElements = document.querySelectorAll('.reveal');
-
-    const observerOption = {
+    
+    const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.1
     };
-
-    const Observer = new IntersectionObserver((entries) => {
+    
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                Observer.unobserve(entry.target);
-
+                observer.unobserve(entry.target);
             }
         });
-    }, observerOption);
-
-
+    }, observerOptions);
+    
     lazyElements.forEach(element => {
-        Observer.observe(element);
-    }) ;
+        observer.observe(element);
+    });
+}
+
+//Active Navigation Link Highlight - Naduni Ameesha//
+
+function initActiveNavHighlight() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    window.addEventListener('scroll', function() {
+        let current = '';
+        const navbarHeight = document.getElementById('navbar').offsetHeight;
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - navbarHeight - 100;
+            const sectionHeight = section.offsetHeight;
+            
+            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+}
+
+initActiveNavHighlight();
+
+//Form Validation (for future login forms) - Vishwa Amarajith//
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function validatePassword(password) {
+    return password.length >= 8;
 }
 
 
+// Console Welcome Message - Vishwa Amarajith//
+console.log('%c⚡ Entangle', 'font-size: 24px; font-weight: bold; color: #3b82f6;');
+console.log('%cAI-Powered Startup & Investor Connection Platform', 'font-size: 14px; color: #8b5cf6;');
+console.log('%cBuilt with ❤️ for entrepreneurs and investors', 'font-size: 12px; color: #6b7280;');
